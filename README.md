@@ -50,9 +50,9 @@ matched by colour alone.
    pick `kiln_ifs_map.py`.
 2. Open **Kiln IFS Tool Map** > **Config** and set `printer_url`, e.g.
    `http://192.168.1.56`.
-3. Turn it on for your printer's process preset: in Advanced mode, set
-   **Slicing pipeline plugin** (`slicing_pipeline_plugin`) to
-   *Kiln IFS Tool Map*.
+3. Turn it on in your process preset: in Advanced mode, **Others**, next to
+   the post-processing scripts, add *Kiln IFS Tool Map* to **Slicing
+   Pipeline Plugin** (`slicing_pipeline_plugin`).
 4. On the first export, OrcaSlicer asks whether the plugin may connect to the
    printer. Answer Yes; OrcaSlicer remembers it.
 
