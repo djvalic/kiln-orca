@@ -29,7 +29,7 @@ otherwise. At the G-code post-processing step this plugin:
    comment per tool:
 
 ```
-; kiln-orca start (tool map from http://192.168.1.56)
+; kiln-orca start (tool map from http://<printer-ip>)
 ; kiln-orca: T0 PLA #FF0000 -> slot 3 PLA #E60A0A
 IFS_MAP_TOOL TOOL=0 SLOT=3
 ; kiln-orca: T2 PETG #FFFFFF -> slot 1 PETG #FAFAFA
@@ -57,7 +57,7 @@ matched by colour alone.
 1. In OrcaSlicer: main menu > **Plugins** > **Install local plugin**, then
    pick `kiln_ifs_map.py`.
 2. Open **Kiln IFS Tool Map** > **Config** and set `printer_url`, e.g.
-   `http://192.168.1.56`.
+   `http://<printer-ip>`.
 3. Turn it on in your process preset: in Advanced mode, **Others**, next to
    the post-processing scripts, add *Kiln IFS Tool Map* to **Slicing
    Pipeline Plugin** (`slicing_pipeline_plugin`).
@@ -68,7 +68,7 @@ matched by colour alone.
 
 | Key | Default | Meaning |
 |---|---|---|
-| `printer_url` | `""` | The printer, e.g. `http://192.168.1.56`. If empty, the plugin uses the physical printer's host when OrcaSlicer passes it. |
+| `printer_url` | `""` | The printer, e.g. `http://<printer-ip>`. If empty, the plugin uses the physical printer's host when OrcaSlicer passes it. |
 | `on_mismatch` | `"error"` | `error`: stop the export when a tool's material is in no slot (or no slot has filament). `keep`: leave that tool on its default slot and map the rest. |
 | `if_offline` | `"skip"` | `skip`: printer unreachable, file left unchanged. `error`: stop the export. |
 | `timeout` | `3` | Seconds to wait for the printer. |
@@ -85,7 +85,7 @@ right, and this plugin only confirms it.
 
 ```
 python3 test_kiln_ifs_map.py                        # offline tests
-python3 test_kiln_ifs_map.py http://192.168.1.56    # + a read-only query of a printer
+python3 test_kiln_ifs_map.py http://<printer-ip>    # + a read-only query of a printer
 ```
 
 OrcaSlicer's plugin API is new and may change; this plugin uses only
