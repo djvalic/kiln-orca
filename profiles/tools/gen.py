@@ -262,6 +262,9 @@ def filament(name, ftype, dens, cost, maxvol, noz, noz0, rng, bed, bed0, fan, co
         "inherits": "",
         "version": VERSION,
         "filament_settings_id": [name],
+        # Fixed id: Kiln OS publishes it per IFS slot in Moonraker's lane_data
+        # (filament_id), so OrcaSlicer's printer sync selects this profile
+        "filament_id": FILAMENT_IDS[name],
         "filament_type": [ftype],
         "filament_vendor": ["Generic"],
         "filament_diameter": ["1.75"],
@@ -297,6 +300,14 @@ def filament(name, ftype, dens, cost, maxvol, noz, noz0, rng, bed, bed0, fan, co
     if extra:
         d.update(extra)
     return d
+
+# Kiln OS (moonraker/components/kiln_lanes.py) sends these per slot material;
+# keep both lists the same. "P" ids are OrcaSlicer's user-filament ids.
+FILAMENT_IDS = {
+    "AD5X PLA": "PKLNPLA", "AD5X Silk PLA": "PKLNSLK", "AD5X PLA-CF": "PKLNPCF",
+    "AD5X PETG": "PKLNPET", "AD5X PETG-CF": "PKLNPGC", "AD5X ABS": "PKLNABS",
+    "AD5X TPU": "PKLNTPU",
+}
 
 HARD = ("Carbon fibre filled: abrasive. Use a hardened steel (or other wear-resistant) nozzle; "
         "it wears a brass or stainless nozzle out quickly. No 0.2 / 0.25 mm nozzle (clogs). ")
