@@ -151,7 +151,7 @@
     "support_multi_bed_types": "0",
     "thumbnails": "48x48/PNG,300x300/PNG",
     "printer_notes": "Kiln OS (Klipper) on the Flashforge AD5X. Machine G-code from docs/orcaslicer.md.",
-    "machine_start_gcode": "SAVE_VARIABLE VARIABLE=use_trash_on_print VALUE=1\nPRINT_START BED=[bed_temperature_initial_layer_single] EXTRUDER=[nozzle_temperature_initial_layer] TOOL=[initial_tool]\nSET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count]",
+    "machine_start_gcode": "SAVE_VARIABLE VARIABLE=use_trash_on_print VALUE={if enable_prime_tower}0{else}1{endif}\nPRINT_START BED=[bed_temperature_initial_layer_single] EXTRUDER=[nozzle_temperature_initial_layer] TOOL=[initial_tool]\nSET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count]",
     "machine_end_gcode": "PRINT_END",
     "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0",
     "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]\nSET_PRINT_STATS_INFO CURRENT_LAYER={layer_num + 1}",

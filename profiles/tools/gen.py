@@ -11,7 +11,7 @@ def mname(n):
 
 # Kiln machine G-code, exactly as docs/orcaslicer.md (and the current orca/*.json)
 GCODE = {
-    "machine_start_gcode": "SAVE_VARIABLE VARIABLE=use_trash_on_print VALUE=1\nPRINT_START BED=[bed_temperature_initial_layer_single] EXTRUDER=[nozzle_temperature_initial_layer] TOOL=[initial_tool]\nSET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count]",
+    "machine_start_gcode": "SAVE_VARIABLE VARIABLE=use_trash_on_print VALUE={if enable_prime_tower}0{else}1{endif}\nPRINT_START BED=[bed_temperature_initial_layer_single] EXTRUDER=[nozzle_temperature_initial_layer] TOOL=[initial_tool]\nSET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count]",
     "machine_end_gcode": "PRINT_END",
     "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0",
     "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]\nSET_PRINT_STATS_INFO CURRENT_LAYER={layer_num + 1}",
