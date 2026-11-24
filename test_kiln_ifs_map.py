@@ -2,7 +2,7 @@
 """Tests for kiln_ifs_map.py without OrcaSlicer.
 
 usage: python3 test_kiln_ifs_map.py [PRINTER_URL]
-With PRINTER_URL (e.g. http://192.168.1.56) the printer's live slots are
+With PRINTER_URL (e.g. http://<printer-ip>) the printer's live slots are
 also read (read-only query) and a sample file is mapped against them.
 """
 import os

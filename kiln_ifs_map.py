@@ -28,7 +28,7 @@ ifs_materials status already. The printer refuses a mapped slot without
 filament when the print starts.
 
 Config (Plugins > Kiln IFS Tool Map > Config):
-  printer_url   "http://192.168.1.56" (empty: the physical printer's host,
+  printer_url   "http://<printer-ip>" (empty: the physical printer's host,
                 when OrcaSlicer passes it)
   on_mismatch   "error": stop the export/upload when a tool's material is in
                 no slot; "keep": leave that tool on its default slot
