@@ -6,6 +6,14 @@ When you export or upload a print, it looks at what is loaded in the IFS and
 sends each slicer tool to the slot that holds its filament. Nothing needs
 installing on the printer.
 
+## Kiln OS profiles for OrcaSlicer
+
+Printer (every nozzle size), process and filament profiles for the AD5X on
+Kiln OS are in [`profiles/`](profiles/README.md): download
+`kiln-ad5x-orcaslicer-profiles.zip` from the
+[latest release](https://github.com/djvalic/kiln-orca/releases/latest) and
+import it with File > Import > Import Configs.
+
 ## What it does
 
 On Kiln OS, slicer tool T0-T3 loads IFS slot 1-4 unless the file says

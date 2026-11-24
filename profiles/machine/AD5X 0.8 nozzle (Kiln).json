@@ -1,0 +1,164 @@
+{
+    "type": "machine",
+    "name": "AD5X 0.8 nozzle (Kiln)",
+    "from": "User",
+    "instantiation": "true",
+    "inherits": "",
+    "version": "2.4.0.0",
+    "printer_settings_id": "AD5X 0.8 nozzle (Kiln)",
+    "printer_model": "Flashforge AD5X",
+    "printer_variant": "0.8",
+    "printer_technology": "FFF",
+    "nozzle_diameter": [
+        "0.8"
+    ],
+    "gcode_flavor": "klipper",
+    "printable_area": [
+        "0x0",
+        "220x0",
+        "220x220",
+        "0x220"
+    ],
+    "printable_height": "220",
+    "extruder_clearance_radius": "58",
+    "extruder_clearance_height_to_rod": "26",
+    "extruder_clearance_height_to_lid": "130",
+    "extruder_clearance_dist_to_rod": "40",
+    "default_print_profile": "0.40mm Standard @Kiln AD5X 0.8",
+    "default_filament_profile": [
+        "AD5X PLA"
+    ],
+    "machine_max_speed_x": [
+        "600",
+        "600"
+    ],
+    "machine_max_speed_y": [
+        "600",
+        "600"
+    ],
+    "machine_max_speed_z": [
+        "20",
+        "20"
+    ],
+    "machine_max_speed_e": [
+        "35",
+        "30"
+    ],
+    "machine_max_acceleration_x": [
+        "20000",
+        "20000"
+    ],
+    "machine_max_acceleration_y": [
+        "20000",
+        "20000"
+    ],
+    "machine_max_acceleration_z": [
+        "500",
+        "500"
+    ],
+    "machine_max_acceleration_e": [
+        "5000",
+        "5000"
+    ],
+    "machine_max_acceleration_extruding": [
+        "20000",
+        "20000"
+    ],
+    "machine_max_acceleration_retracting": [
+        "5000",
+        "5000"
+    ],
+    "machine_max_acceleration_travel": [
+        "20000",
+        "20000"
+    ],
+    "machine_max_jerk_x": [
+        "25",
+        "25"
+    ],
+    "machine_max_jerk_y": [
+        "25",
+        "25"
+    ],
+    "machine_max_jerk_z": [
+        "3",
+        "3"
+    ],
+    "machine_max_jerk_e": [
+        "2.5",
+        "2.5"
+    ],
+    "machine_max_junction_deviation": [
+        "0.01",
+        "0.01"
+    ],
+    "min_layer_height": [
+        "0.20"
+    ],
+    "max_layer_height": [
+        "0.56"
+    ],
+    "retraction_length": [
+        "1.5"
+    ],
+    "retraction_speed": [
+        "35"
+    ],
+    "deretraction_speed": [
+        "35"
+    ],
+    "retraction_minimum_travel": [
+        "1"
+    ],
+    "retract_restart_extra": [
+        "0"
+    ],
+    "retract_when_changing_layer": [
+        "1"
+    ],
+    "wipe": [
+        "0"
+    ],
+    "z_hop": [
+        "0.4"
+    ],
+    "z_hop_types": [
+        "Normal Lift"
+    ],
+    "retract_lift_enforce": [
+        "All Surfaces"
+    ],
+    "retract_length_toolchange": [
+        "3"
+    ],
+    "retract_restart_extra_toolchange": [
+        "0"
+    ],
+    "use_firmware_retraction": "0",
+    "use_relative_e_distances": "1",
+    "single_extruder_multi_material": "1",
+    "manual_filament_change": "0",
+    "purge_in_prime_tower": "0",
+    "enable_filament_ramming": "0",
+    "cooling_tube_length": "0",
+    "cooling_tube_retraction": "0",
+    "parking_pos_retraction": "0",
+    "extra_loading_move": "0",
+    "machine_load_filament_time": "39",
+    "machine_unload_filament_time": "39",
+    "machine_tool_change_time": "0",
+    "auxiliary_fan": "0",
+    "support_multi_bed_types": "0",
+    "thumbnails": "48x48/PNG,300x300/PNG",
+    "printer_notes": "Kiln OS (Klipper) on the Flashforge AD5X. Machine G-code from docs/orcaslicer.md.",
+    "machine_start_gcode": "SAVE_VARIABLE VARIABLE=use_trash_on_print VALUE=1\nPRINT_START BED=[bed_temperature_initial_layer_single] EXTRUDER=[nozzle_temperature_initial_layer] TOOL=[initial_tool]\nSET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count]",
+    "machine_end_gcode": "PRINT_END",
+    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0",
+    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]\nSET_PRINT_STATS_INFO CURRENT_LAYER={layer_num + 1}",
+    "change_filament_gcode": "T[next_extruder]",
+    "machine_pause_gcode": "PAUSE",
+    "time_lapse_gcode": "",
+    "change_extrusion_role_gcode": "",
+    "printing_by_object_gcode": "",
+    "template_custom_gcode": ""
+}

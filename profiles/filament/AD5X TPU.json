@@ -1,0 +1,132 @@
+{
+    "type": "filament",
+    "name": "AD5X TPU",
+    "from": "User",
+    "instantiation": "true",
+    "inherits": "",
+    "version": "2.4.0.0",
+    "filament_settings_id": [
+        "AD5X TPU"
+    ],
+    "filament_type": [
+        "TPU"
+    ],
+    "filament_vendor": [
+        "Generic"
+    ],
+    "filament_diameter": [
+        "1.75"
+    ],
+    "filament_density": [
+        "1.21"
+    ],
+    "filament_cost": [
+        "30"
+    ],
+    "filament_flow_ratio": [
+        "0.98"
+    ],
+    "filament_max_volumetric_speed": [
+        "3.6"
+    ],
+    "nozzle_temperature": [
+        "225"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "225"
+    ],
+    "nozzle_temperature_range_low": [
+        "210"
+    ],
+    "nozzle_temperature_range_high": [
+        "240"
+    ],
+    "temperature_vitrification": [
+        "60"
+    ],
+    "enable_pressure_advance": [
+        "0"
+    ],
+    "pressure_advance": [
+        "0.04"
+    ],
+    "fan_min_speed": [
+        "100"
+    ],
+    "fan_max_speed": [
+        "100"
+    ],
+    "close_fan_the_first_x_layers": [
+        "1"
+    ],
+    "fan_cooling_layer_time": [
+        "30"
+    ],
+    "slow_down_for_layer_cooling": [
+        "1"
+    ],
+    "slow_down_layer_time": [
+        "8"
+    ],
+    "slow_down_min_speed": [
+        "10"
+    ],
+    "overhang_fan_speed": [
+        "100"
+    ],
+    "overhang_fan_threshold": [
+        "50%"
+    ],
+    "additional_cooling_fan_speed": [
+        "0"
+    ],
+    "required_nozzle_HRC": [
+        "0"
+    ],
+    "filament_notes": [
+        "TPU 95A or harder. Softer TPU does not feed through the IFS. Slow: 3.6 mm3/s."
+    ],
+    "compatible_printers": [
+        "AD5X 0.4 nozzle (Kiln)",
+        "AD5X 0.6 nozzle (Kiln)",
+        "AD5X 0.8 nozzle (Kiln)",
+        "AD5X 1.0 nozzle (Kiln)"
+    ],
+    "compatible_printers_condition": "",
+    "hot_plate_temp": [
+        "40"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "40"
+    ],
+    "textured_plate_temp": [
+        "40"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "40"
+    ],
+    "eng_plate_temp": [
+        "40"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "40"
+    ],
+    "cool_plate_temp": [
+        "40"
+    ],
+    "cool_plate_temp_initial_layer": [
+        "40"
+    ],
+    "textured_cool_plate_temp": [
+        "40"
+    ],
+    "textured_cool_plate_temp_initial_layer": [
+        "40"
+    ],
+    "supertack_plate_temp": [
+        "40"
+    ],
+    "supertack_plate_temp_initial_layer": [
+        "40"
+    ]
+}
