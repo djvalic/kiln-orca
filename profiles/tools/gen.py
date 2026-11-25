@@ -345,11 +345,24 @@ def write(sub, name, d):
         json.dump(d, f, indent=4, ensure_ascii=False)
         f.write("\n")
 
+def with_tower(name, d):
+    """The same process with the prime tower on: the start G-code then tells
+    the printer to only prime at each change (use_trash_on_print 0, Kiln's
+    nopoop plugin); from layer 2 the change happens at the tower, not the
+    purge box, and part of the purge goes into the objects' infill."""
+    t = dict(d)
+    tname = name.replace(" @Kiln", " Tower @Kiln")
+    t["name"] = t["print_settings_id"] = tname
+    t["enable_prime_tower"] = "1"
+    t["flush_into_infill"] = "1"
+    return tname, t
+
 for n in NOZZLES:
     write("machine", mname(n), machine(n))
     for lh, label in LAYERS[n]:
         name, d = process(n, lh, label)
         write("process", name, d)
+        write("process", *with_tower(name, d))
 for d in FILAMENTS:
     write("filament", d["name"], d)
 print("ok")
